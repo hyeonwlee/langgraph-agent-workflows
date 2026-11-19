@@ -1,0 +1,8 @@
+{
+  "node_version": "20",
+  "graphs": {
+    "graph": "./03_human_in_the_loop.ts:graph"
+  },
+  "env": ".env",
+  "dependencies" : ["."]
+}
