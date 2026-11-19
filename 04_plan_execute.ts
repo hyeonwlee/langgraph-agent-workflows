@@ -185,7 +185,7 @@ async function replanNode(state: typeof PlanExecuteState.State) {
 function shouldExecuteTool(state: typeof PlanExecuteState.State) {
     const lastMessage = state.messages[state.messages.length - 1];
 
-    if (lastMessage instanceof AIMessage && lastMessage.tool_calls.length > 0) {
+    if (lastMessage instanceof AIMessage && (lastMessage.tool_calls?.length ?? 0) > 0) {
         return "tools";
     }
     return "replan";

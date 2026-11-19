@@ -177,38 +177,3 @@ const workflow = new StateGraph(AgentState)
   .addEdge("generate", END);
 
 export const graph = workflow.compile();
-
-async function main() {
-  const rl = readline.createInterface({ input, output });
-
-  console.log("-----------------------------------------------");
-  console.log("🤖 AI 어시스턴트와 대화를 시작합니다! (종료하려면 'exit' 입력)");
-  console.log("-----------------------------------------------");
-
-  while (true) {
-    const userInput = await rl.question("\n👤 질문을 입력하세요: ");
-
-    if (userInput.toLowerCase() === "exit" || userInput.toLowerCase() === "quit") {
-      console.log("👋 대화를 종료합니다. 감사합니다!");
-      break;
-    }
-
-    if (!userInput.trim()) continue;
-
-    try {
-      const result = await graph.invoke({
-        question: userInput,
-      });
-      
-      console.log("\n[ 🤖 AI 답변 ]");
-      console.log(result.answer);
-      console.log("-----------------------------------------------");
-    } catch (error) {
-      console.error("❌ 에러 발생:", error);
-    }
-  }
-
-  rl.close();
-}
-
-main();

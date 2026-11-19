@@ -55,7 +55,7 @@ function shouldContinue(state: typeof AgentState.State) {
 async function authNode(state: typeof AgentState.State) {
     const lastMessage = state.messages[state.messages.length - 1];
 
-    if (!(lastMessage instanceof AIMessage) || lastMessage.tool_calls.length === 0) {
+    if (!(lastMessage instanceof AIMessage) || !lastMessage.tool_calls?.length) {
         throw new Error("승인할 Tool Call을 찾을 수 없습니다.");
     }
 

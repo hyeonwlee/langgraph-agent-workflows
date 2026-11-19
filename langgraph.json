@@ -1,7 +1,11 @@
 {
   "node_version": "20",
   "graphs": {
-    "graph": "./03_human_in_the_loop.ts:graph"
+    "basic_agent": "./01_basic_agent.ts:graph",
+    "tool_calling": "./02_tool_calling.ts:graph",
+    "human_in_the_loop": "./03_human_in_the_loop.ts:graph",
+    "plan_execute": "./04_plan_execute.ts:planExecuteGraph",
+    "rag_workflow": "./05_rag_workflow.ts:graph"
   },
   "env": ".env",
   "dependencies" : ["."]

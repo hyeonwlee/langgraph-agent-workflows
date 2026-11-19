@@ -13,5 +13,9 @@
     "lib": ["ES2020"]
   },
   "include": ["./**/*"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "cli.ts",
+    "practice_*.ts"
+  ]
 }
